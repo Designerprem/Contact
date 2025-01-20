@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="Google Sheet.css">
+</head>
+
+<body>
+    <div class="contact-container">
+        <form method="POST" name="contact-form" id="contact-form">
+            <h2>Contact Us</h2>
+            <p class="form-description">We'd love to hear from you! Please fill out the form below and we'll get in touch with you shortly.</p>
+            
+            <div class="input-group">
+                <input type="text" name="your-name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" name="your-number" placeholder="Your Phone Number" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="email" name="your-email" placeholder="Your Email" required>
+            </div>
+            
+            <div class="input-group">
+                <textarea name="message" placeholder="Your Message" rows="7" required></textarea>
+            </div>
+            
+            <div class="submit-btn">
+                <input type="submit" value="Send Message">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Update the URL with your new Google Apps Script Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby_xkFVn5N7QMOjpk0TJ-1KaxFunV0YlHbpyhmQRbT9gvmH-95HTic5sRhWuT4LnNiH/exec'; 
+
+        const form = document.getElementById('contact-form');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();  // Prevent the default form submission
+
+            // Send the form data using Fetch API
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: new FormData(form) 
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to the Thank You page as soon as the form is successfully submitted
+                    window.location.href = "thank-you.html"; // Change this URL to your actual "Thank You" page
+                } else {
+                    throw new Error("Failed to submit the form");
+                }
+            })
+            .catch(error => {
+                alert("There was an error submitting your form. Please try again.");
+                console.error('Error!', error.message);
+            });
+        });
+    </script>
+</body>
+
+</html>
