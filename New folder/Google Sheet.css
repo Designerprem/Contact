@@ -1,0 +1,147 @@
+/* General Reset and Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #9b1c31, #003b5b); /* Dark red to dark blue gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+}
+
+/* Main Contact Form Container */
+.contact-container {
+    background-color: #fff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Form Heading */
+h2 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Description */
+.form-description {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #FF6F61; /* Highlight color */
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.6);
+}
+
+/* Placeholder Text Styling */
+input::placeholder, textarea::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+/* Textarea Styling */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit Button Styling */
+.submit-btn input[type="submit"] {
+    background-color: #87CEEB; /* Sky blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn input[type="submit"]:hover {
+    background-color: #66C2FF; /* Lighter blue on hover */
+    transform: scale(1.05);
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .form-description {
+        font-size: 16px;
+    }
+
+    input, textarea {
+        padding: 12px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .form-description {
+        font-size: 14px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
